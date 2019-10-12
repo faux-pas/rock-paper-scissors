@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <ul id="gameLog">
+        </ul>
+        <p id="result">            
+        </p>
+    </div>
 </body>
 </html>
 <script>
@@ -14,6 +19,9 @@
     let options = new Array('rock', 'paper', 'scissors');
     let playerScore = 0;
     let computerScore = 0;
+
+    let content = document.getElementById("gameLog");
+    let gameResult = document.getElementById("result");
 
     function computerPlay(){        
         return options[Math.floor(Math.random() * 3)];
@@ -28,7 +36,8 @@
             return "No Winner! " + playerSelection + " Draws Against " + computerSelection;
         }
         //win
-        //if player value -1 is below 0 see if 3 equals the computerValue else see if player value -1 does
+        //in the array rock, paper, scissors the indexs are 0,1,2. Each option loses to the option next going counter clockwise.
+        //if playerValue-1 is below 0 see if 2 equals the computerValue else see if player value -1 does
         else if((playerValue - 1 == -1? 2 : playerValue - 1) == computerValue){
             playerScore++;
             return "You Win! " + playerSelection + " Beats " + computerSelection;
@@ -44,16 +53,25 @@
         for(let i = 0; i<5; i++){
             playerSelection = prompt("Enter 'rock', 'paper' or 'scissors' to make a choice!");
             computerSelection = computerPlay();
-            console.log(playRound(playerSelection, computerSelection));
+            let li = document.createElement('li');
+            li.innerHTML = playRound(playerSelection, computerSelection);
+            content.append(li);
         }
         if(playerScore > computerScore){
-            console.log("Player Wins! " + playerScore + ":" + computerScore);
+            return("Player Wins! " + playerScore + ":" + computerScore);
         }else if(playerScore == computerScore){
-            console.log("Draw!! " + playerScore + ":" + computerScore);
+            return("Draw!! " + playerScore + ":" + computerScore);
         }else{
-            console.log("PLayer Loses! " + playerScore + ":" + computerScore);
+            return("Player Loses! " + playerScore + ":" + computerScore);
         }
     }
 
-    game();
+    function playGame(){
+        let result = document.createElement('h2');
+        result.innerHTML = game();
+        gameResult.append(result);
+    }
+
+    playGame();
+
 </script>
