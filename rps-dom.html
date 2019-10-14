@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock|Paper|Scissors UI</title>
+    <script src="https://kit.fontawesome.com/01169baf06.js" crossorigin="anonymous"></script>
+    <script defer type="text/javascript" src="js/rps-dom.js"></script>
+    <link rel="stylesheet" href="css/rps-dom.css">
+</head>
+
+<body>
+    <div id="gameArea">
+        <div id="screen">
+            <div id="winResult"></div>
+            <div id="results">
+                <span id="playerScore"></span>
+                <span id="computerScore"></span>
+            </div>
+            <div id="gameLog">
+                <p id="logMessage"></p>
+            </div>
+        </div>
+        <div id="options">
+            <button id="optionStart" onclick="start()" value="start">Start</button>
+            <button id="optionQuit" onclick="gameQuit()" value="quit">Quit</button>
+        </div>
+        <div id="gameControls">
+            <button id="rockBtn" class="rps-choice far fa-hand-rock" value="rock"><i class=""></i></button>
+            <button id="paperBtn" class="rps-choice far fa-hand-paper" value="paper"><i class=""></i></button>
+            <button id="scissorsBtn" class="rps-choice far fa-hand-scissors" value="scissors"><i class=""></i></button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

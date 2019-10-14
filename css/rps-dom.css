@@ -1,0 +1,90 @@
+#gameArea {
+    margin: 3rem auto;
+    display: flex;
+    width: 30%;
+    border: 8px solid black;
+    padding: 1rem;
+    border-radius: 35px;
+    box-shadow: 15px 13px HSL(316, 100%, 52.5%);
+    background-color: HSL(316, 100%, 52.5%);
+    flex-direction: column;
+}
+
+#screen {
+    height: 400px;
+    width: 80%;
+    background-color: #B3B3B3;
+    position: relative;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#winResult {
+    font-size: 5em;
+    position: absolute;
+    height: 50%;
+    width: 80%;
+    margin: 25% 10%;
+    text-align: center;
+}
+
+#playerScore {
+    float: left;
+}
+
+#computerScore {
+    float: right;
+}
+
+#computerScore, #playerScore {
+    font-size: 3em;
+    padding: 2rem;
+}
+
+#gameLog {
+    height: 100%;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#gameControls, #options {
+    display: flex;
+    justify-content: space-between;
+}
+
+#options{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#options button{
+    font-size: 1.5em;
+}
+
+#gameControls{
+    width: 80%;
+    margin: 4rem auto;
+}
+
+.rps-choice{
+    font-size: 7em;
+}
+
+.rps-choice, #options > button {
+    padding: 1rem;
+    border-radius: 25px;
+    color: white;
+    background-color: black;
+    border: 3px solid white;
+    box-shadow: 5px 5px black;
+}
+
+.hidden{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
+}
